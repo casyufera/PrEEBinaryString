@@ -22,7 +22,13 @@ public class BinaryString {
 	public BinaryString (String bits) { this.bits = bits.toCharArray(); }
 	public int length() {return bits.length;}
 	public void set (int index, char value) {bits[index] = value;}
-	public char get (int index) {return bits[index];}
+	public char get (int index) {
+		try {
+			return bits[index];
+		} catch (RuntimeException e) {
+			throw new BinaryStringException();
+		}
+	}
 	public String toString() {
 		String result = " ";
 		
