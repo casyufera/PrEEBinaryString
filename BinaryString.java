@@ -23,7 +23,11 @@ public class BinaryString {
 	public int length() {return bits.length;}
 	public void set (int index, char value) {
 		try {
+			if (value == '1' || value == '0') {
 			bits[index] = value;
+			} else {
+				throw new BinaryStringExceptio();
+			}
 		} catch (RuntimeException e) {
 			throw new BinaryStringException();
 		}
