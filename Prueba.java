@@ -7,7 +7,7 @@ import org.junit.Before;
 
 public class Prueba {
 	
-	//Apartado 3: Implementar testGetOutOfLimitBit()
+	//Apartado 4: Implementar testSetOutOfLimitBit()
 
 	private BinaryString bitset1, bitset2, bitset3, bitset4;
 	private String pruebaString2 = "1010101010", pruebaString3 = "100101", pruebaString4 = "0110101";
@@ -22,9 +22,11 @@ public class Prueba {
 	}
 
 	//Comprobamos si al acceder fuera de los límites del array nos lanza una excepción tipo BinaryStringException
+	//pero utilizando el método set()
 	@Test(expected = BinaryStringException.class)
-	public void testGetOutOfLimitBit() {
-		bitset4.get(56);
+	public void testSetOutOfLimitBit() {
+		bitset4.set(56, '0');
 	}
 }
+
 
