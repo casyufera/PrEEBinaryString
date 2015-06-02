@@ -7,7 +7,7 @@ import org.junit.Before;
 
 public class Prueba {
 	
-	//Apartado 5: Implementar testSetOutOfLimitBitV2()
+	//Apartado 6: Implementar testInvalidBitValue()
 
 	private BinaryString bitset1, bitset2, bitset3, bitset4;
 	private String pruebaString2 = "1010101010", pruebaString3 = "100101", pruebaString4 = "0110101";
@@ -21,16 +21,10 @@ public class Prueba {
 		bitset4 = new BinaryString(pruebaString4);
 	}
 
-	//Comprobamos si al acceder fuera de los límites del array nos lanza una excepción tipo BinaryStringException
-	//pero utilizando el método set() con un try-catch
+	//Comprobamos si al intentar meter un char que no sea '1' o '0' lanza una excepción BinaryStringException 
 	@Test(expected = BinaryStringException.class)
-	public void testSetOutOfLimitBit() {
-		try {
-			bitset4.set(56, '0');
-			fail("Se esperaba excepcion BinaryStringException");
-			
-		} catch (BinaryStringException e) {
-			
-		}
+	public void testInvalidBitValue() {
+			bitset4.set(1, 'a');
 	}
 }
+
